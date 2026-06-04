@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AI Crop Recommendation</title>
+</head>
+<body>
+
+<h1>🌾 AI Crop Recommendation System</h1>
+
+<form action="/predict" method="POST">
+
+    <input type="number" name="N" placeholder="Nitrogen" required><br><br>
+
+    <input type="number" name="P" placeholder="Phosphorus" required><br><br>
+
+    <input type="number" name="K" placeholder="Potassium" required><br><br>
+
+    <input type="number" step="any" name="temp" placeholder="Temperature" required><br><br>
+
+    <input type="number" step="any" name="humidity" placeholder="Humidity" required><br><br>
+
+    <input type="number" step="any" name="ph" placeholder="pH Value" required><br><br>
+
+    <input type="number" step="any" name="rainfall" placeholder="Rainfall" required><br><br>
+
+    <button type="submit">Recommend Crop</button>
+
+</form>
+
+{% if prediction %}
+<h2>🌾 Recommended Crop: {{ prediction }}</h2>
+<p><b>Crop Information:</b> {{ crop_info }}</p>
+{% endif %}
+
+</body>
+</html>
